@@ -1,1 +1,390 @@
-/* You can add global styles to this file, and also import other style files */
+     @import "primeicons/primeicons.css";
+
+     :host {
+       --bright-blue: oklch(51.01% 0.274 263.83);
+       --electric-violet: oklch(53.18% 0.28 296.97);
+       --french-violet: oklch(47.66% 0.246 305.88);
+       --vivid-pink: oklch(69.02% 0.277 332.77);
+       --hot-red: oklch(61.42% 0.238 15.34);
+       --orange-red: oklch(63.32% 0.24 31.68);
+       --white: oklch(100% 0.00011 271.152);
+
+       --gray-900: oklch(19.37% 0.006 300.98);
+       --gray-700: oklch(36.98% 0.014 302.71);
+       --gray-400: oklch(70.9% 0.015 304.04);
+
+       --red-to-pink-to-purple-vertical-gradient: linear-gradient(180deg,
+           var(--orange-red) 0%,
+           var(--vivid-pink) 50%,
+           var(--electric-violet) 100%);
+
+       --red-to-pink-to-purple-horizontal-gradient: linear-gradient(90deg,
+           var(--orange-red) 0%,
+           var(--vivid-pink) 50%,
+           var(--electric-violet) 100%);
+
+       --pill-accent: var(--bright-blue);
+
+       font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+         Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+         "Segoe UI Symbol";
+       box-sizing: border-box;
+       -webkit-font-smoothing: antialiased;
+       -moz-osx-font-smoothing: grayscale;
+     }
+
+     body {
+       user-select: none;
+     }
+
+     div {
+       cursor: default;
+     }
+
+     h1 {
+       cursor: default;
+       font-size: 3.125rem;
+       color: var(--white);
+       font-weight: 500;
+       line-height: 100%;
+       letter-spacing: -0.125rem;
+       margin: 0;
+       font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+         Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+         "Segoe UI Symbol";
+     }
+
+     p {
+       margin: 0;
+       color: var(--white);
+     }
+
+     main {
+       width: 100%;
+       min-height: 100%;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       padding: 1rem;
+       box-sizing: inherit;
+       position: relative;
+     }
+
+     .angular-logo {
+       max-width: 9.2rem;
+     }
+
+     .content {
+       display: flex;
+       justify-content: space-around;
+       width: 100%;
+       max-width: 700px;
+       margin-bottom: 3rem;
+     }
+
+     .content h1 {
+       margin-top: 1.75rem;
+     }
+
+     .content p {
+       margin-top: 1.5rem;
+     }
+
+     .divider {
+       width: 1px;
+       background: var(--red-to-pink-to-purple-vertical-gradient);
+       margin-inline: 0.5rem;
+     }
+
+     .pill-group {
+       display: flex;
+       flex-direction: column;
+       align-items: start;
+       flex-wrap: wrap;
+       gap: 1.25rem;
+     }
+
+     .pill {
+       display: flex;
+       align-items: center;
+       --pill-accent: var(--bright-blue);
+       background: color-mix(in srgb, var(--pill-accent) 5%, transparent);
+       color: var(--pill-accent);
+       padding-inline: 0.75rem;
+       padding-block: 0.375rem;
+       border-radius: 2.75rem;
+       border: 0;
+       transition: background 0.3s ease;
+       font-family: var(--inter-font);
+       font-size: 0.875rem;
+       font-style: normal;
+       font-weight: 500;
+       line-height: 1.4rem;
+       letter-spacing: -0.00875rem;
+       text-decoration: none;
+     }
+
+     .pill:hover {
+       background: color-mix(in srgb, var(--pill-accent) 15%, transparent);
+     }
+
+     .pill-group .pill:nth-child(6n + 1) {
+       --pill-accent: var(--bright-blue);
+     }
+
+     .pill-group .pill:nth-child(6n + 2) {
+       --pill-accent: var(--french-violet);
+     }
+
+     .pill-group .pill:nth-child(6n + 3),
+     .pill-group .pill:nth-child(6n + 4),
+     .pill-group .pill:nth-child(6n + 5) {
+       --pill-accent: var(--hot-red);
+     }
+
+     .pill-group svg {
+       margin-inline-start: 0.25rem;
+     }
+
+     .social-links {
+       display: flex;
+       align-items: center;
+       gap: 0.73rem;
+       margin-top: 1.5rem;
+     }
+
+     .social-links path {
+       transition: fill 0.3s ease;
+       fill: var(--gray-400);
+     }
+
+     .social-links a:hover svg path {
+       fill: var(--gray-900);
+     }
+
+     .maincontainer {
+       height: 100dvh;
+       width: 100dvw;
+       position: fixed;
+       left: 0;
+       right: 0;
+       background-color: #f5f5f5;
+       line-height: 3em;
+
+       .side_detailscircle {
+         left: 0;
+         position: fixed;
+         top: 0;
+         border-radius: 0 100% 100% 0;
+         height: 100%;
+         width: 35%;
+         background: #0EC77A;
+         box-shadow: 0 0 12px #000;
+       }
+
+       .themechangediv {
+         position: fixed;
+         right: 1em;
+         top: 1em;
+         width: 4em;
+         height: 2em;
+         background: #0000;
+         box-shadow: inset 0 0 3px #000;
+         border-radius: 15px;
+         display: flex;
+         justify-content: space-evenly;
+         align-items: center;
+
+         .themebutton {
+           height: 80%;
+           width: 45%;
+           border-radius: 100%;
+           color: #fff;
+           align-content: center;
+           justify-content: center;
+           display: flex;
+           align-items: center;
+           font-size: 0.9em;
+           padding: 0.9em;
+
+           #themeicon {
+             color: #000;
+             font-size: 1em;
+           }
+         }
+       }
+
+       .navbarmenu {
+         position: fixed;
+         width: 100%;
+         height: 12vh;
+         bottom: 0.5em;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+
+         .navbarmenucontainer {
+           width: 20%;
+           background: #00000017;
+           height: 80%;
+           border-radius: 15px;
+           backdrop-filter: blur(5px);
+           box-shadow: 0 0 2px #000,
+             inset 0 0 3px #dfdfdf;
+         }
+       }
+     }
+
+     .maincontainer.darkmaincontainer {
+       background-color: #393939 !important;
+
+       .side_detailscircle {
+         background: #00baff !important;
+       }
+
+       .navbarmenu {
+         .navbarmenucontainer {
+           background: #16161617 !important;
+           box-shadow: 0 0 2px #dfdfdf,
+             inset 0 0 2px #161616;
+         }
+       }
+     }
+
+
+     .innermaincontainer {
+       width: 100%;
+       height: 100%;
+       position: relative;
+       display: flex;
+       flex-direction: row;
+       justify-content: space-between;
+       align-items: center;
+
+       .leftcontainer {
+         width: 35%;
+         height: 100%;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+       }
+
+       .rightcontainer {
+         width: 60%;
+         height: 100%;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         flex-direction: column;
+         gap: 1.5em;
+       }
+     }
+
+     .namediv {
+       width: 100%;
+       display: flex;
+       justify-content: center;
+       flex-direction: column;
+
+       .hellodiv {
+         font-size: 3.5em;
+         font-weight: 500;
+       }
+
+       .namedivtext {
+         font-size: 3em;
+         font-weight: 400;
+       }
+
+       .designationdiv {
+         font-size: 2em;
+         font-weight: 600;
+       }
+     }
+
+     .resumediv {
+       width: 100%;
+       display: flex;
+       justify-content: flex-start;
+       align-items: center;
+
+       .downloadbuttondiv {
+         height: 3em;
+         border: 1.5px solid #0EC77A;
+         width: 30%;
+         border-radius: 25px;
+         overflow: hidden;
+         display: flex;
+         flex-direction: row;
+         align-items: center;
+         justify-content: center;
+
+         .downloadtext {
+           font-size: 1.3em;
+           font-weight: 500;
+           text-align: center;
+           width: 80%;
+           height: 100%;
+         }
+
+         .downloadbtnsection {
+           cursor: pointer;
+           width: 20%;
+           height: 100%;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           background: #0EC77A;
+         }
+
+       }
+
+     }
+
+     .informationdiv {
+       width: 100%;
+       display: flex;
+       justify-content: flex-start;
+       align-items: center;
+       font-size: 1.3em;
+       font-weight: 500;
+       line-height: 1.5em;
+       padding-right: 10vw;
+     }
+
+     .logodiv {
+       display: flex;
+       justify-content: space-around;
+       align-items: center;
+       width: 100%;
+       height: 100%;
+
+       .logos {
+         height: 1.5em;
+         width: 1.5em;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+
+         .menulogos {
+           color: #000;
+           cursor: pointer;
+           font-size: 1.3em;
+         }
+
+       }
+
+       .logos:hover {
+         .menulogos {
+           transform: scale(1.5);
+           transition: all 0.2s ease-in-out;
+         }
+       }
+     }
+
+     .navbarmenu {
+       position: fixed;
+       width: 100%;
+       height: 12vh;
+       bottom: 0.5em;
+     }

@@ -1,0 +1,24 @@
+<div class="maincontainer" [class.darkmaincontainer]="isDarkTheme">
+    <div class="side_detailscircle">
+    </div>
+    <div class="themechangediv">
+        @for (item of themeicons; track $index) {
+        <div class="themebutton" (click)="changetheme(item)">
+            <i id="themeicon" [class]="item.icon"></i>
+        </div>
+        }
+    </div>
+    <router-outlet></router-outlet>
+    <div class="navbarmenu">
+        <div class="navbarmenucontainer">
+            <div class="logodiv">
+                @for (item of navLogos; track $index) {
+                <div class="logos" (click)="navigatetopage(item)">
+                    <i class="menulogos" [class]="item.icon"></i>
+                </div>
+                }
+
+            </div>
+        </div>
+    </div>
+</div>
