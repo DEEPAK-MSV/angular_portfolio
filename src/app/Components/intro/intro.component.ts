@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PrimeIcons } from 'primeng/api';
+import { timer } from 'rxjs';
 
 @Component({
   selector: 'app-intro',
@@ -11,7 +12,18 @@ export class IntroComponent implements OnInit {
   icons: any = PrimeIcons
   expstartdate = new Date('2022-08-14');
   totalexperience = ((new Date().getTime() - this.expstartdate.getTime()) / (1000 * 3600 * 24 * 30 * 12)).toFixed(0);
+  nametext: string = 'Deepak';
+  displayText: string = '';
   ngOnInit(): void {
+    let index = 0;
+    const nametimer = timer(0, 350).subscribe(() => {
+      if (index < this.nametext.length) {
+        this.displayText += this.nametext.charAt(index);
+        index++;
+      } else {
+        nametimer.unsubscribe(); // stop when finished
+      }
+    })
   }
 
   downloadcv() {

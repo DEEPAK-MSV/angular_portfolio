@@ -1,5 +1,30 @@
 <div class="maincontainer" [class.darkmaincontainer]="isDarkTheme">
     <div class="side_detailscircle">
+        <svg width="35vh" height="35vh" viewBox="0 0 227 193" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_25_2)">
+                <path filter="url(#f3)"
+                    d="M201.15 141.793H124.628C123.768 141.793 122.048 141.793 121.188 142.651L63.5816 188.154C62.7216 189.013 62.7216 189.871 63.5816 190.73C63.5816 191.589 64.4416 191.589 65.3016 191.589H202.009C215.767 191.589 227.804 179.568 226.945 164.973C226.085 151.237 214.047 141.793 201.15 141.793Z"
+                    fill="#ff4141"></path>
+                <path filter="url(#f2)"
+                    d="M138.72 93.8601C137.86 86.9918 134.421 80.1235 129.262 75.8306L40.7026 5.42983C29.525 -3.15602 14.049 -1.43849 5.4506 9.72275C-3.14783 20.884 -1.42779 36.3373 9.74982 44.9231L74.2345 96.4355L9.74982 147.948C-1.42779 156.534 -3.14783 171.988 5.4506 183.148C14.049 194.31 29.525 196.027 40.7026 187.442L129.262 115.324C135.281 110.172 138.72 103.304 138.72 95.5768V93.8601Z"
+                    fill="#004F9F"></path>
+            </g>
+            <defs>
+                <filter id="f2" width="227" height="300">
+                    <feOffset in="SourceGraphic" dx="5" dy="5" />
+                    <feGaussianBlur stdDeviation="4" />
+                    <feBlend in="SourceGraphic" in2="blurOut" />
+                </filter>
+                <filter id="f3" width="227" height="300">
+                    <feOffset in="SourceGraphic" dx="-5" dy="5" />
+                    <feGaussianBlur stdDeviation="4" />
+                    <feBlend in="SourceGraphic" in2="blurOut" />
+                </filter>
+                <clipPath id="clip0_25_2">
+                    <rect width="227" height="300" fill="white"></rect>
+                </clipPath>
+            </defs>
+        </svg>
     </div>
     <div class="themechangediv">
         @for (item of themeicons; track $index) {
@@ -13,7 +38,7 @@
         <div class="navbarmenucontainer">
             <div class="logodiv">
                 @for (item of navLogos; track $index) {
-                <div class="logos" (click)="navigatetopage(item)">
+                <div class="logos" [class.selectednavitem]="item.navurl == currentnav" (click)="navigatetopage(item)">
                     <i class="menulogos" [class]="item.icon"></i>
                 </div>
                 }
