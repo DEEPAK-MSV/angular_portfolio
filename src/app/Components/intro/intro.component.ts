@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PrimeIcons } from 'primeng/api';
 import { timer } from 'rxjs';
-
 @Component({
   selector: 'app-intro',
   imports: [],
@@ -11,12 +10,16 @@ import { timer } from 'rxjs';
 export class IntroComponent implements OnInit {
   icons: any = PrimeIcons
   expstartdate = new Date('2022-08-14');
-  totalexperience = ((new Date().getTime() - this.expstartdate.getTime()) / (1000 * 3600 * 24 * 30 * 12)).toFixed(0);
+  totalexperience: any;
   nametext: string = 'Deepak';
   displayText: string = '';
+
+  constructor() { }
+
   ngOnInit(): void {
+    this.setexperience();
     let index = 0;
-    const nametimer = timer(0, 350).subscribe(() => {
+    const nametimer = timer(0, 300).subscribe(() => {
       if (index < this.nametext.length) {
         this.displayText += this.nametext.charAt(index);
         index++;
@@ -24,6 +27,14 @@ export class IntroComponent implements OnInit {
         nametimer.unsubscribe(); // stop when finished
       }
     })
+  }
+
+  setexperience() {
+    if (new Date().getTime() < this.expstartdate.getTime()) {
+      this.totalexperience = '3';
+      return;
+    }
+    this.totalexperience = ((new Date().getTime() - this.expstartdate.getTime()) / (1000 * 3600 * 24 * 30 * 12)).toFixed(0);
   }
 
   downloadcv() {

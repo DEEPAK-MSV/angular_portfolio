@@ -15,8 +15,10 @@ export class CommonComponent implements OnInit {
   themeicons: any;
   isDarkTheme: boolean = false;
   currentnav: string = '';
+  selectedtheme: any;
   navLogos = [
     { name: 'intro', icon: PrimeIcons.USER, navurl: '/intro' },
+    { name: 'browse', icon: PrimeIcons.SEARCH, navurl: '/browse' },
     { name: 'projects', icon: PrimeIcons.BRIEFCASE, navurl: '/projects' },
     { name: 'skills', icon: PrimeIcons.CODE, navurl: '/skills' },
     { name: 'contact', icon: PrimeIcons.ENVELOPE, navurl: '/contact' },
@@ -27,6 +29,8 @@ export class CommonComponent implements OnInit {
     })
     this.themeservice.themeSubject.subscribe(theme => {
       this.isDarkTheme = theme.name == 'dark' || false;
+      this.selectedtheme = theme;
+      console.log('selected theme', this.selectedtheme);
     })
     this.router.events
       .pipe(filter((event): event is NavigationEnd => event instanceof NavigationEnd))
@@ -40,10 +44,7 @@ export class CommonComponent implements OnInit {
   }
 
   changetheme(item: any) {
-    console.log('themechangeclicked');
     try {
-      debugger;
-      console.log(item);
       this.themeservice.settheme(item);
     } catch (error) {
       console.error('error while changing theme', error);
@@ -51,7 +52,6 @@ export class CommonComponent implements OnInit {
   }
 
   navigatetopage(item: any) {
-    console.log('navigatetopage clicked', item);
     try {
       this.router.navigate(['/' + item.name]);
     } catch (error) {

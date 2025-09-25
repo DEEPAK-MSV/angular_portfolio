@@ -3,6 +3,7 @@ import { IntroComponent } from './Components/intro/intro.component';
 import { ProjectsComponent } from './Components/projects/projects.component';
 import { ContactComponent } from './Components/contact/contact.component';
 import { SkillsComponent } from './Components/skills/skills.component';
+import { BrowseComponent } from './Components/browse/browse.component';
 
 export const routes: Routes = [
     {
@@ -13,6 +14,10 @@ export const routes: Routes = [
     {
         path: 'intro',
         component: IntroComponent
+    },
+    {
+        path: 'browse',
+        component: BrowseComponent
     },
     {
         path: 'projects',
