@@ -26,7 +26,7 @@ export class ThemeserviceService {
   }
 
 
-  settheme = (themeitem: any) => {
+  settheme = (themeitem?: any) => {
     const savedtheme = isPlatformBrowser(this.platformId) ? localStorage.getItem('selectedTheme') : null;
     const theme = themeitem ? themeitem : savedtheme ? JSON.parse(savedtheme) : this.themes.value[1];
     this.overlaytheme(theme.name);

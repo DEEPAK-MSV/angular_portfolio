@@ -13,6 +13,7 @@ import { ThemeserviceService } from './service/themeservice.service';
 export class AppComponent implements OnInit {
   title = 'Deepak Portfolio';
   constructor(private themeService: ThemeserviceService, private titleservice: Title) {
+    this.themeService.settheme();
     this.titleservice.setTitle(this.title);
   }
   ngOnInit(): void {

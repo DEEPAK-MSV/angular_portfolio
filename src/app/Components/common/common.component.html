@@ -29,14 +29,31 @@
         </div>
     </div>
     <div class="right_container">
-        <div class="firstdiv">
-            <div class="themechangediv">
-                @for (item of themeicons; track $index) {
-                <div class="themebutton" [class.selectedicon]="selectedtheme == item" (click)="changetheme(item)">
-                    <i id="themeicon" [class]="item.icon"></i>
-                </div>
-                }
+        <div [hidden]="!showthemeoption" class="firstdiv">
+            <div class="settingsdiv">
+                <i [matMenuTriggerFor]="menu" class="pi pi-cog settingsicon"></i>
             </div>
+            <mat-menu #menu="matMenu">
+                <div class="themechangemenu" (click)="$event.stopPropagation()"
+                    [class.themechangemenu_dark]="isDarkTheme">
+                    <div class="themetextdiv">
+                        <h1>Select Theme</h1>
+                    </div>
+                    <div class="themechangediv">
+                        @for (item of themeicons; track $index) {
+                        <div class="themebutton" [class.selectedicon]="selectedtheme === item.name"
+                            (click)="changetheme(item); $event.stopPropagation()">
+                            <i id="themeicon" [class]="item.icon"></i>
+                        </div>
+                        }
+                    </div>
+                    <div class="autothemediv">
+                        <span class="autothemtext">Auto Theme</span>
+                        <p-toggleswitch (click)="$event.stopPropagation()" (ngModelChange)="autothemeturn();"
+                            [(ngModel)]="autodarkthemevalue"></p-toggleswitch>
+                    </div>
+                </div>
+            </mat-menu>
         </div>
         <div class="maindiv">
             <router-outlet></router-outlet>
