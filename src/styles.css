@@ -251,7 +251,7 @@
              align-items: center;
 
              .settingsicon {
-               font-size: 0.9em;
+               font-size: 3vh;
                color: #000;
              }
            }
@@ -264,9 +264,11 @@
            display: flex;
            justify-content: center;
            align-items: center;
-           height: 80%;
+           height: 90%;
            background: transparent;
+           padding: 15vh 0;
            padding-left: 6%;
+           overflow: overlay;
 
            .innermaincontainer {
              width: 100%;
@@ -333,8 +335,10 @@
                    justify-content: center;
                    gap: 1em;
                    background-image: linear-gradient(to right, #0EC77A 0%, #34ff80 60%, #abffca 100%);
+                   cursor: pointer;
 
                    .downloadtext {
+                     cursor: pointer;
                      font-size: 3vh;
                      font-weight: 500;
                      text-align: center;
@@ -388,6 +392,19 @@
          display: flex;
          justify-content: center;
          align-items: center;
+
+         @media screen and (min-width: 2000px) {
+           .navbarmenucontainer {
+             width: 25vw !important;
+             border-radius: 18vh !important;
+
+             .logodiv {
+               .logos {
+                 border-radius: 18vh !important;
+               }
+             }
+           }
+         }
 
          .navbarmenucontainer {
            width: 18em;
@@ -446,8 +463,8 @@
 
 
      .themechangemenu {
-       height: 10em;
-       width: 10em;
+       height: 25vh;
+       width: 100%;
        display: flex;
        justify-content: space-evenly;
        align-items: center;
@@ -455,10 +472,10 @@
        gap: 1em;
        background: #f9f9f9 !important;
        overflow: hidden;
-       padding: 1em 0;
+       padding: 1vh 1vw;
 
        .themetextdiv {
-         height: 1em;
+         height: 10%;
          width: 100%;
          display: flex;
          justify-content: center;
@@ -466,16 +483,16 @@
 
          h1 {
            color: #000;
-           font-size: 0.8em;
+           font-size: 2vh;
            font-weight: 500;
            letter-spacing: 0.05em;
          }
        }
 
        .themechangediv {
-         width: 5em;
-         padding: 0.1em;
-         height: 2.5em;
+         width: 75%;
+         padding: 0.5vh;
+         height: 5vh;
          background: #0000;
          box-shadow: inset 0 0 5px #333;
          border-radius: 1em;
@@ -486,26 +503,26 @@
          .themebutton {
            height: 90%;
            width: 40%;
-           border-radius: 0.8em;
+           border-radius: 15px;
            color: #fff;
            align-content: center;
            justify-content: center;
            display: flex;
            align-items: center;
            font-size: 1em;
-           padding: 1em;
-           transition: transform 0.5s ease, background-color 0.5s ease;
+           padding: 2vh;
+           transition: transform 0.2s ease, background-color 0.2s ease;
            cursor: pointer;
 
            #themeicon {
              color: #000;
-             font-size: 1em;
+             font-size: 2vh;
            }
 
          }
 
          .selectedicon {
-           width: 50%;
+           width: 55%;
            background: #ff8c00;
          }
 
@@ -521,7 +538,7 @@
          gap: 1em;
 
          .autothemtext {
-           font-size: 0.8em;
+           font-size: 1.8vh;
            font-weight: 400;
            color: #000;
          }
@@ -541,18 +558,15 @@
          box-shadow: inset 0 0 8px #222 !important;
 
          .themebutton {
-           transition: transform 0.5s ease, background-color 0.5s ease;
            cursor: pointer;
 
            #themeicon {
-             font-size: 0.9em;
              color: #f5f5f5 !important;
            }
 
          }
 
          .selectedicon {
-           width: 50%;
            background: #161616 !important;
          }
        }
