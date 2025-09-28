@@ -38,7 +38,13 @@
        padding: 0 !important;
      }
 
+     .cdk-overlay-pane {
+       background: transparent !important;
+     }
+
      .mat-mdc-menu-panel {
+       backdrop-filter: blur(4px);
+       background: transparent !important;
        border-radius: 0 !important;
      }
 
@@ -201,12 +207,12 @@
        display: flex;
        flex-direction: row;
        align-items: center;
-       justify-content: center;
+       justify-content: space-between;
 
 
        .left_container {
          height: 100%;
-         width: 35%;
+         width: 32%;
          display: flex;
          justify-content: flex-start;
          align-items: center;
@@ -237,7 +243,7 @@
            display: flex;
            justify-content: end;
            align-items: center;
-           padding: 1em;
+           /* padding: 1em; */
 
            .settingsdiv {
              position: fixed;
@@ -264,11 +270,12 @@
            display: flex;
            justify-content: center;
            align-items: center;
-           height: 90%;
+           height: 100%;
            background: transparent;
            padding: 15vh 0;
            padding-left: 6%;
            overflow: overlay;
+           backdrop-filter: blur(5px);
 
            .innermaincontainer {
              width: 100%;
@@ -432,10 +439,10 @@
                justify-content: center;
                align-items: center;
                border-radius: 2em;
+               cursor: pointer;
 
                .menulogos {
                  color: #000;
-                 cursor: pointer;
                  font-size: 3.5vh;
                }
              }
@@ -444,6 +451,7 @@
                background-image: linear-gradient(to bottom, #0EC77A 0%, #34ff80 60%, #abffca 100%);
 
                .menulogos {
+                 transform: scale(1.5);
                  background: -webkit-linear-gradient(#004f9f, #ff0000);
                  -webkit-background-clip: text;
                  -webkit-text-fill-color: #00000000;
@@ -470,9 +478,9 @@
        align-items: center;
        flex-direction: column;
        gap: 1em;
-       background: #f9f9f9 !important;
+       background: #f9f9f900 !important;
        overflow: hidden;
-       padding: 1vh 1vw;
+       padding: 3vh;
 
        .themetextdiv {
          height: 10%;
@@ -483,7 +491,7 @@
 
          h1 {
            color: #000;
-           font-size: 2vh;
+           font-size: 2.5vh;
            font-weight: 500;
            letter-spacing: 0.05em;
          }
@@ -538,15 +546,15 @@
          gap: 1em;
 
          .autothemtext {
-           font-size: 1.8vh;
-           font-weight: 400;
+           font-size: 2vh;
+           font-weight: 300;
            color: #000;
          }
        }
      }
 
      .themechangemenu_dark {
-       background: #393939 !important;
+       background: #39393900 !important;
 
        .themetextdiv {
          h1 {
@@ -555,7 +563,8 @@
        }
 
        .themechangediv {
-         box-shadow: inset 0 0 8px #222 !important;
+         background: #161616 !important;
+         box-shadow: inset 0 0 8px #333 !important;
 
          .themebutton {
            cursor: pointer;
@@ -567,7 +576,7 @@
          }
 
          .selectedicon {
-           background: #161616 !important;
+           background: #313131 !important;
          }
        }
 

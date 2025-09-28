@@ -27,7 +27,7 @@ export class CommonComponent implements OnInit {
   navLogos = [
     { name: 'intro', icon: PrimeIcons.USER, navurl: '/intro' },
     { name: 'browse', icon: PrimeIcons.SEARCH, navurl: '/browse' },
-    { name: 'projects', icon: PrimeIcons.BRIEFCASE, navurl: '/projects' },
+    { name: 'career', icon: PrimeIcons.BRIEFCASE, navurl: '/career' },
     { name: 'skills', icon: PrimeIcons.CODE, navurl: '/skills' },
     { name: 'contact', icon: PrimeIcons.ENVELOPE, navurl: '/contact' },
   ]
@@ -91,7 +91,7 @@ export class CommonComponent implements OnInit {
 
   navigatetopage(item: any) {
     try {
-      this.router.navigate(['/' + item.name]);
+      this.router.navigate([item.navurl]);
     } catch (error) {
       console.error('error while navigating to page', error);
     }
