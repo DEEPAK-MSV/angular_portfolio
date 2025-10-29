@@ -1,0 +1,80 @@
+{
+    "name": "Deepak",
+    "age": 24,
+    "city": "Hyderabad",
+    "profession": "Software Engineer",
+    "hobbies": [
+        "Reading",
+        "Traveling",
+        "Coding"
+    ],
+    "education": {
+        "degree": "Bachelor of Computer Applications",
+        "major": "Computer Science",
+        "university": "Vikrama Simhapuri University",
+        "graduation_year": 2022
+    },
+    "contact": {
+        "email": "kiritideepak@gmail.com",
+        "phone": "+91 7680974203",
+        "linkedin": "https://in.linkedin.com/in/deepak-kiriti-7a1183224",
+        "github": "https://github.com/DEEPAK-MSV"
+    },
+    "skills": [
+        "Angular",
+        "React",
+        "TypeScript",
+        "CSS",
+        "Bootstrap",
+        "PrimeNG",
+        "Tailwind CSS"
+    ],
+    "languages": [
+        "English",
+        "Hindi",
+        "Telugu"
+    ],
+    "experience": [
+        {
+            "company": "ZestIOT",
+            "role": "Software Engineer",
+            "Start": "December 2023",
+            "End": "",
+            "responsibilities": [
+                "Developed and maintained web applications using Angular and TypeScript.",
+                "Collaborated with cross-functional teams to design user-friendly interfaces.",
+                "Implemented responsive design principles to ensure compatibility across devices.",
+                "Optimized application performance and fixed bugs.",
+                "Participated in code reviews and contributed to team knowledge sharing.",
+                "Worked with backend developers to integrate APIs and services.",
+                "Stayed updated with the latest industry trends and technologies.",
+                "Contributed to the documentation of technical specifications and user guides.",
+                "Conducted testing and debugging of applications to ensure functionality.",
+                "Assisted in the deployment and maintenance of applications."
+            ]
+        },
+        {
+            "company": "ZestIOT",
+            "role": "UI Intern",
+            "Start": "June 2023",
+            "End": "December 2023",
+            "responsibilities": [
+                "Assisted in the development of web applications using Angular and JavaScript.",
+                "Collaborated with senior developers to learn best practices and coding standards.",
+                "Engaged in agile development practices and attended daily stand-up meetings.",
+                "Participated in team meetings and contributed ideas for project improvements."
+            ]
+        },
+        {
+            "company": "Pulse Active Stations",
+            "role": "Junior software developer",
+            "Start": "August 2022",
+            "End": "June 2023",
+            "responsibilities": [
+                "Developed and maintained applications using React Native.",
+                "Gained hands-on experience with front-end technologies and frameworks.",
+                "Assisted in debugging and troubleshooting application issues."
+            ]
+        }
+    ]
+}
