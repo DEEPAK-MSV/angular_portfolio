@@ -26,7 +26,7 @@ export class CommonComponent implements OnInit {
   checkautovalue: any;
   navLogos = [
     { name: 'intro', icon: PrimeIcons.USER, navurl: '/intro' },
-    { name: 'browse', icon: PrimeIcons.SEARCH, navurl: '/browse' },
+    // { name: 'browse', icon: PrimeIcons.SEARCH, navurl: '/browse' },
     { name: 'career', icon: PrimeIcons.BRIEFCASE, navurl: '/career' },
     { name: 'skills', icon: PrimeIcons.CODE, navurl: '/skills' },
     { name: 'contact', icon: PrimeIcons.ENVELOPE, navurl: '/contact' },
