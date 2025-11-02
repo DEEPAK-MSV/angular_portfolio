@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PrimeIcons } from 'primeng/api';
 import { timer } from 'rxjs';
+import { CommonService } from '../../service/common.service';
 @Component({
   selector: 'app-intro',
   imports: [],
@@ -11,12 +12,13 @@ export class IntroComponent implements OnInit {
   icons: any = PrimeIcons
   expstartdate = new Date('2022-08-14');
   totalexperience: any;
-  nametext: string = 'Deepak';
+  nametext: any;
   displayText: string = '';
 
-  constructor() { }
+  constructor(private commonservice: CommonService) { }
 
   ngOnInit(): void {
+    this.nametext = this.commonservice.getPersonalDetails('name');
     this.setexperience();
     let index = 0;
     const nametimer = timer(0, 300).subscribe(() => {

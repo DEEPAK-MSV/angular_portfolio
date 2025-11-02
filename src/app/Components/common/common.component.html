@@ -1,4 +1,4 @@
-<div class="maincontainer" [class.darkmaincontainer]="isDarkTheme">
+<div *ngIf="devicetype == 'desktop'" class="maincontainer" [class.darkmaincontainer]="isDarkTheme">
     <div class="left_container">
         <div class="side_detailscircle">
             <svg width="35vh" height="35vh" viewBox="0 0 227 193" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -72,3 +72,5 @@
         </div>
     </footer>
 </div>
+
+<app-devicecompatability *ngIf="devicetype != 'desktop'"></app-devicecompatability>

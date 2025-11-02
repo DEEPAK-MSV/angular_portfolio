@@ -1,0 +1,87 @@
+.main-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: black;
+    opacity: 0.85;
+}
+
+.phone-container {
+    display: flex;
+    justify-content: center;
+}
+
+.phone {
+    border: 2px solid white;
+    display: flex;
+    height: 15rem;
+    width: 8rem;
+    border-radius: 15px;
+    justify-content: space-between;
+    flex-direction: column;
+    animation: rotate 1.6s easy-in infinite alternate;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(-90deg)
+    }
+
+    75% {
+        transform: rotate(0deg)
+    }
+
+    100% {
+        transform: rotate(0deg)
+    }
+}
+
+.phone-header {
+    display: flex;
+    border: 1px solid white;
+    height: 1rem;
+    background: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    justify-content: center;
+}
+
+.phone-i-header {
+    display: block;
+    height: 0.1rem;
+    background: black;
+    width: 1.5rem;
+}
+
+.button-container {
+    display: flex;
+    border: 2px solid white;
+    width: 100%;
+    background: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-i-container {
+    display: block;
+    height: 1rem;
+    background: black;
+    width: 1rem;
+    border-radius: 10px;
+}
+
+.text-box {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+.text-color {
+    font-size: 1em;
+    text-align: center;
+    color: white;
+}

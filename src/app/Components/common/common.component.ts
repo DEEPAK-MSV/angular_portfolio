@@ -8,11 +8,13 @@ import { filter, timer } from 'rxjs';
 import { MatMenuModule } from '@angular/material/menu';
 import { ToggleSwitch } from 'primeng/toggleswitch';
 import { FormsModule } from '@angular/forms';
-import { isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser, NgIf } from '@angular/common';
+import { DevicecompatabilityComponent } from "../devicecompatability/devicecompatability.component";
+import { CommonService } from '../../service/common.service';
 
 @Component({
   selector: 'app-common',
-  imports: [RouterOutlet, MatMenuModule, ToggleSwitch, FormsModule],
+  imports: [RouterOutlet, MatMenuModule, ToggleSwitch, FormsModule, DevicecompatabilityComponent, NgIf],
   templateUrl: './common.component.html',
   styleUrl: './common.component.css'
 })
@@ -24,6 +26,7 @@ export class CommonComponent implements OnInit {
   autodarkthemevalue: boolean = false;
   showthemeoption: boolean = false;
   checkautovalue: any;
+  devicetype: any;
   navLogos = [
     { name: 'intro', icon: PrimeIcons.USER, navurl: '/intro' },
     // { name: 'browse', icon: PrimeIcons.SEARCH, navurl: '/browse' },
@@ -31,7 +34,8 @@ export class CommonComponent implements OnInit {
     { name: 'skills', icon: PrimeIcons.CODE, navurl: '/skills' },
     { name: 'contact', icon: PrimeIcons.ENVELOPE, navurl: '/contact' },
   ]
-  constructor(private themeservice: ThemeserviceService, private router: Router, @Inject(PLATFORM_ID) private platformId: Object) {
+  constructor(private themeservice: ThemeserviceService, private router: Router, @Inject(PLATFORM_ID) private platformId: Object, private commonservice: CommonService) {
+    this.devicetype = this.commonservice.getDeviceInfoValue('deviceType');
     this.themeservice.themes.subscribe(themes => {
       this.themeicons = themes;
     })
