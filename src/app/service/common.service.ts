@@ -11,7 +11,6 @@ export class CommonService {
 
   getDeviceInfoValue<K extends keyof DeviceInfo>(param: K): DeviceInfo[K] {
     const deviceInfo = this.devicedetection.getDeviceInfo();
-    console.log('Device Info:', deviceInfo);
     return deviceInfo[param];
   }
 
